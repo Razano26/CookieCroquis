@@ -1,13 +1,24 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NotFound() {
   return (
     <div className="flex items-center min-h-screen px-4 py-12 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       <div className="w-full space-y-6 text-center">
         <div className="space-y-3">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl transition-transform hover:scale-110">
-            404
-          </h1>
+          <div className="flex items-center justify-center gap-8 transition-transform duration-700 hover:scale-110 mb-8">
+            <Image
+              src="/not-found.svg"
+              alt="404"
+              width={100}
+              height={100}
+              className="w-45 h-45"
+            />
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
+              404
+            </h1>
+          </div>
+          <hr className="border-gray-200 w-1/2 mx-auto" />
           <p className="text-gray-500">
             Looks like you&apos;ve ventured into the unknown digital realm.
           </p>
