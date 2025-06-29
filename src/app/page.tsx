@@ -7,14 +7,7 @@ import {
   CardTitle,
 } from "@components/ui/card";
 import { Badge } from "@components/ui/badge";
-import {
-  ArrowRight,
-  Code2,
-  Palette,
-  Shield,
-  GitBranch,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, Code2, Palette, Shield, Zap } from "lucide-react";
 import { TechStack } from "@components/TechStack";
 import Footer from "@components/Footer";
 import Hero from "@components/Hero";

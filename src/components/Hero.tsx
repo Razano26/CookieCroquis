@@ -1,14 +1,26 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Badge } from "@components/ui/badge";
 import { Button } from "@components/ui/button";
-import { ArrowRight, GitBranch, Github } from "lucide-react";
+import { ArrowRight, GitBranch, Github, Cookie } from "lucide-react";
 import { getLatestRelease, formatVersion } from "@lib/github";
 
-const Hero = async () => {
-  const latestRelease = await getLatestRelease();
-  const version = latestRelease
-    ? formatVersion(latestRelease.tag_name)
-    : "v?.?.?";
+const Hero = () => {
+  const [version, setVersion] = useState("vx.x.x"); // change to increment annimation 0.0.0 to x.x.x
+
+  useEffect(() => {
+    const fetchVersion = async () => {
+      const latestRelease = await getLatestRelease();
+      const formattedVersion = formatVersion(
+        latestRelease?.tag_name || "vx.x.x",
+      );
+      setVersion(formattedVersion);
+    };
+
+    fetchVersion();
+  }, []);
 
   return (
     <section className="relative overflow-hidden">
@@ -30,7 +42,9 @@ const Hero = async () => {
               </Badge>
             </div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-mono">
-              Cookie Croquis
+              C<Cookie className="inline-block h-12 w-10" color="purple" />
+              <Cookie className="inline-block h-12 w-10" color="purple" />
+              kie Croquis
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A minimal starter for building applications with Next.js,
