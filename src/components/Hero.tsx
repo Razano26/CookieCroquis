@@ -6,6 +6,7 @@ import { Badge } from "@components/ui/badge";
 import { Button } from "@components/ui/button";
 import { ArrowRight, GitBranch, Github, Cookie } from "lucide-react";
 import { getLatestRelease, formatVersion } from "@lib/github";
+import { LineShadowText } from "@components/magicui/line-shadow-text";
 
 const Hero = () => {
   const [version, setVersion] = useState("vx.x.x"); // change to increment annimation 0.0.0 to x.x.x
@@ -44,7 +45,7 @@ const Hero = () => {
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-mono">
               C<Cookie className="inline-block h-12 w-10" color="purple" />
               <Cookie className="inline-block h-12 w-10" color="purple" />
-              kie Croquis
+              kie <LineShadowText shadowColor="purple">Croquis</LineShadowText>
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A minimal starter for building applications with Next.js,

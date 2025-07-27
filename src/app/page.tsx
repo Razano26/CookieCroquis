@@ -63,11 +63,11 @@ export default function HomePage() {
     },
     {
       name: "shadcn/ui",
-      icon: "default",
+      icon: "shadcn-ui.svg",
     },
     {
       name: "Magic UI",
-      icon: "default",
+      icon: "magic-ui.svg",
     },
     {
       name: "ESLint",
@@ -76,6 +76,18 @@ export default function HomePage() {
     {
       name: "Prettier",
       icon: "prettier.svg",
+    },
+    {
+      name: "Docker",
+      icon: "docker-icon.svg",
+    },
+    {
+      name: "Husky",
+      icon: "husky.svg",
+    },
+    {
+      name: "Lint staged",
+      icon: "lint-staged-logo.svg",
     },
   ];
 
