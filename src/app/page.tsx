@@ -1,4 +1,3 @@
-import { Button } from "@components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,10 +6,11 @@ import {
   CardTitle,
 } from "@components/ui/card";
 import { Badge } from "@components/ui/badge";
-import { ArrowRight, Code2, Palette, Shield, Zap } from "lucide-react";
+import { Code2, Palette, Shield, Zap } from "lucide-react";
 import { TechStack } from "@components/TechStack";
 import Footer from "@components/Footer";
 import Hero from "@components/Hero";
+import CallToAction from "@components/CallToAction";
 
 export default function HomePage() {
   const features = [
@@ -143,32 +143,7 @@ export default function HomePage() {
       <TechStack techStack={techStack} />
 
       {/* CTA Section */}
-      <section className="py-24 sm:py-32">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-8 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight font-mono">
-              Ready to Build Something Amazing?
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Get started with Cookie Croquis and focus on what matters most –
-              building your application.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6 font-mono">
-                Download Starter Kit
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 py-6 font-mono bg-transparent"
-              >
-                Read Documentation
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CallToAction />
 
       {/* Footer */}
       <Footer />
