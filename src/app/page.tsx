@@ -1,16 +1,10 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@components/ui/card";
-import { Badge } from "@components/ui/badge";
-import { Code2, Palette, Shield, Zap } from "lucide-react";
+import {} from "@components/ui/card";
+import { Code2, Palette, Shield, Zap, Server } from "lucide-react";
 import { TechStack } from "@components/TechStack";
 import Footer from "@components/Footer";
 import Hero from "@components/Hero";
 import CallToAction from "@components/CallToAction";
+import Feature from "@components/Feature";
 
 export default function HomePage() {
   const features = [
@@ -41,6 +35,13 @@ export default function HomePage() {
       description:
         "Husky and lint-staged ensure code quality with automated checks on every commit.",
       badge: "Code Quality",
+    },
+    {
+      icon: <Server className="h-8 w-8" />,
+      title: "Seamless Deployment",
+      description:
+        "Fully Dockerized for effortless, consistent deployment across any cloud or hosting provider.",
+      badge: "Production Ready",
     },
   ];
 
@@ -97,53 +98,17 @@ export default function HomePage() {
       <Hero />
 
       {/* Features Section */}
-      <section className="py-24 sm:py-32">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight font-mono">
-              Everything You Need
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A carefully curated stack of modern tools and best practices to
-              accelerate your development workflow.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="relative overflow-hidden border-2 hover:border-primary/20 transition-colors"
-              >
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit">
-                      {feature.icon}
-                    </div>
-                    <Badge variant="secondary" className="font-mono text-xs">
-                      {feature.badge}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-mono">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Feature features={features} />
 
       {/* Tech Stack Section */}
-      <TechStack techStack={techStack} />
+      <section id="tech-stack" aria-labelledby="tech-stack-heading">
+        <TechStack techStack={techStack} />
+      </section>
 
       {/* CTA Section */}
-      <CallToAction />
+      <section id="getting-started" aria-labelledby="cta-heading">
+        <CallToAction />
+      </section>
 
       {/* Footer */}
       <Footer />

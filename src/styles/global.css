@@ -14,16 +14,26 @@
     --input: 214.3 31.8% 91.4%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 262.1 83.3% 57.8%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 100% 50%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --ring: 215 20.2% 65.1%;
-    --radius: 0.5rem;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.75rem;
+
+    /* Custom purple palette */
+    --purple-50: 250 100% 97%;
+    --purple-100: 243 100% 94%;
+    --purple-200: 238 94% 87%;
+    --purple-300: 232 94% 79%;
+    --purple-600: 262.1 83.3% 57.8%;
+    --purple-700: 263 70% 50%;
+    --purple-900: 261 73% 38%;
+    --purple-950: 261 75% 24%;
   }
 
   .dark {
@@ -39,13 +49,13 @@
     --input: 216 34% 17%;
     --card: 224 71% 4%;
     --card-foreground: 213 31% 91%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
-    --ring: 216 34% 17%;
+    --ring: 263 70% 50%;
     --radius: 0.5rem;
   }
   .theme {
@@ -65,6 +75,16 @@
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+  }
+
+  /* Smooth scrolling for navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-purple-600;
   }
 }
 
@@ -98,4 +118,33 @@
       transform: translateZ(0) rotate(360deg);
     }
   }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }

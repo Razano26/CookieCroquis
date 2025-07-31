@@ -24,25 +24,24 @@ export function TechStack({ techStack }: TechStackProps) {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
           {techStack.map((tech, index) => (
-            <div
-              key={index}
-              className="w-full sm:w-auto sm:flex-shrink-0 sm:basis-[calc(50%-1rem)] md:basis-[calc(25%-1.5rem)] text-center space-y-2"
-            >
-              <div className="p-4 rounded-lg bg-background border-2 hover:border-primary/20 transition-colors h-24 flex flex-col items-center justify-center">
+            <div key={index} className="group relative w-32 sm:w-36 md:w-40">
+              <div className="p-6 rounded-xl bg-background border-2 hover:border-purple-200 dark:hover:border-purple-800 transition-all duration-300 h-28 flex flex-col items-center justify-center group-hover:shadow-lg group-hover:scale-105 group-hover:bg-purple-50/50 dark:group-hover:bg-purple-950/20">
                 {tech.icon === "default" ? (
-                  <CheckCircle className="h-8 w-8 mx-auto text-primary mb-2" />
+                  <CheckCircle className="h-8 w-8 mx-auto text-purple-600 mb-2 group-hover:scale-110 transition-transform" />
                 ) : (
                   <Image
-                    src={tech.icon}
+                    src={tech.icon || "/placeholder.svg"}
                     alt={tech.name}
-                    width={36}
-                    height={36}
-                    className="mx-auto mb-2"
+                    width={32}
+                    height={32}
+                    className="mx-auto mb-2 group-hover:scale-110 transition-transform"
                   />
                 )}
-                <p className="font-mono font-medium">{tech.name}</p>
+                <p className="font-mono font-medium text-sm text-center leading-tight">
+                  {tech.name}
+                </p>
               </div>
             </div>
           ))}
